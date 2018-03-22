@@ -6,13 +6,25 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.redhat.sample.model.Customer;
+import com.redhat.sample.repository.CustomerRepository;
 
+/**
+ * 
+ * https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+ * 
+ *   docker run -p 9200:9200 -p 9300:9300  docker.io/elasticsearch:2.4.6
+ * 
+ * REST API:
+ *     /rest/findAll
+ *     /rest/findByFirstName/Kylin
+ *     /rest/findByLastName/Soong
+ * 
+ * @author kylin
+ *
+ */
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
     
     @Autowired
     private CustomerRepository repository;
@@ -43,14 +55,19 @@ public class Application implements CommandLineRunner {
 
 	private void fetchIndividualCustomers() {
 
-		System.out.println("Customer found with findByFirstName('Alice'):");
+		System.out.println("Customer found with findByFirstName('Kylin'):");
 		System.out.println("--------------------------------");
-		System.out.println(this.repository.findByFirstName("Alice"));
+		System.out.println(this.repository.findByFirstName("Kylin"));
 
-		System.out.println("Customers found with findByLastName('Smith'):");
+		System.out.println("Customers found with findByLastName('Soong'):");
 		System.out.println("--------------------------------");
-		for (Customer customer : this.repository.findByLastName("Smith")) {
+		for (Customer customer : this.repository.findByLastName("Soong")) {
 			System.out.println(customer);	
 		}
 	}
+	
+	public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+    
 }

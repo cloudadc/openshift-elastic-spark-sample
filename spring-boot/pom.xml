@@ -8,40 +8,43 @@
     <version>0.1.0</version>
     
     <properties>
-        <!-- 1.4.1.RELEASE 1.5.9.RELEASE-->
-        <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
         <fabric8.version>2.2.170.redhat-000019</fabric8.version>
-        <fabric8.maven.plugin.version>3.1.80.redhat-000019</fabric8.maven.plugin.version>
+        <fabric8.maven.plugin.version>3.5.38</fabric8.maven.plugin.version>
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
     </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.fabric8</groupId>
-				<artifactId>fabric8-project-bom-camel-spring-boot</artifactId>
-				<version>${fabric8.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
+<!--  
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.fabric8</groupId>
+                <artifactId>fabric8-project-bom-camel-spring-boot</artifactId>
+                <version>${fabric8.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>	
+-->
 
     <dependencies>
         <dependency>
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter</artifactId>
+           <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
     </dependencies>
 

@@ -1,4 +1,4 @@
-package com.redhat.sample;
+package com.redhat.sample.repository;
 
 import java.util.List;
 
